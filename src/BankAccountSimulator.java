@@ -1,5 +1,10 @@
 import java.util.Scanner;
 
+/*
+ * BankAccountSimulator is a simple console-based Java application that
+ * simulates bank account creation and basic information queries (name,
+ * balance and agency number) through an interactive text menu.
+ */
 public class BankAccountSimulator {
     public static void main(String[] args) throws Exception {
         //TODO: To Know and import Scanner Class.
@@ -39,7 +44,7 @@ while (true){
              else{
                 System.out.println("Your name is:" + name);
              }
-        }   
+        }
 
         if (inputUser == 4) {
             if (agencyNumber.equals("")) {
@@ -60,7 +65,7 @@ while (true){
             agencyNumber = scanner.nextLine();
 
             System.out.println ("Please, enter your initial balance:");
-            String balanceInput = scanner.nextLine(); 
+            String balanceInput = scanner.nextLine();
 
                 // Convert to  double
                 balance = Double.parseDouble(balanceInput.replace(",", "."));
@@ -71,7 +76,7 @@ while (true){
             System.out.println("Exiting the program, Goodbye!");
             break;
         }
-    } 
+    }
     scanner.close();
-    } 
+    }
 }
