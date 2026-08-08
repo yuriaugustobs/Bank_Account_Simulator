@@ -4,9 +4,10 @@ public class BankAccountSimulator {
     private static String name = "";
     private static double balance = 0;
     private static String agencyNumber = "";
+    private static boolean accountCreated = false;
 
     public static void exibirResumo() {
-        if (name.equals("") || agencyNumber.equals("") || balance == 0) {
+        if (!accountCreated) {
             System.out.println("Nenhuma conta criada ainda.");
         } else {
             System.out.println("Resumo da conta: nome=" + name + ", agência=" + agencyNumber + ", saldo=" + balance);
@@ -73,6 +74,8 @@ while (true){
 
                 // Convert to  double
                 balance = Double.parseDouble(balanceInput.replace(",", "."));
+
+            accountCreated = true;
 
             System.out.println ("Thank you for creating an account in our bank, your agency number is:" +agencyNumber+ ", and your balance is:" +balance+ "!");
         }
