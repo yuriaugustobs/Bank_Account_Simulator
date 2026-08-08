@@ -1,3 +1,11 @@
+/*
+ * BankAccountSimulator.java
+ *
+ * Classe principal que implementa um simulador interativo de conta bancária via console.
+ * Apresenta um menu com opções para criar conta (informando nome, agência e saldo inicial),
+ * consultar saldo, nome e agência, ou encerrar o programa.
+ */
+
 import java.util.Scanner;
 
 public class BankAccountSimulator {
