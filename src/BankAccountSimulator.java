@@ -1,15 +1,19 @@
 import java.util.Scanner;
 
 public class BankAccountSimulator {
+    static String name = "";
+    static double balance = 0;
+    static String agencyNumber = "";
+
+    public static void exibirResumo() {
+        System.out.println("Resumo da conta — Nome: " + name + " | Agência: " + agencyNumber + " | Saldo: $" + balance);
+    }
+
     public static void main(String[] args) throws Exception {
         //TODO: To Know and import Scanner Class.
         //Show messages of user.
         //Get by Scanner Class the input values of terminal.
         //Show the message "Account Created"
-        String name = "";
-        double balance = 0;
-        String agencyNumber = "";
-
         Scanner scanner = new Scanner(System.in);
 while (true){
         System.out.println("Hello, Welcome to FutureBank, please press the number corresponding to the option you wish to perform:");
