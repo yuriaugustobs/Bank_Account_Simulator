@@ -1,0 +1,2 @@
+# credenciais de teste (arquivo descartável do smoke test)
+AWS_ACCESS_KEY_ID=AKIAABCDEFGHIJKLMNOP
