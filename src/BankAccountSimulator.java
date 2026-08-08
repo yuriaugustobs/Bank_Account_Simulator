@@ -12,6 +12,7 @@ public class BankAccountSimulator {
 
         Scanner scanner = new Scanner(System.in);
 while (true){
+        System.out.println("=== FutureBank v1.1 ===");
         System.out.println("Hello, Welcome to FutureBank, please press the number corresponding to the option you wish to perform:");
         System.out.println("To create your account, press -> 1");
         System.out.println("To show your balance, press -> 2");
@@ -39,7 +40,7 @@ while (true){
              else{
                 System.out.println("Your name is:" + name);
              }
-        }   
+        }
 
         if (inputUser == 4) {
             if (agencyNumber.equals("")) {
@@ -60,18 +61,19 @@ while (true){
             agencyNumber = scanner.nextLine();
 
             System.out.println ("Please, enter your initial balance:");
-            String balanceInput = scanner.nextLine(); 
+            String balanceInput = scanner.nextLine();
 
                 // Convert to  double
                 balance = Double.parseDouble(balanceInput.replace(",", "."));
 
+            System.out.println ("[TEST] Account successfully created!");
             System.out.println ("Thank you for creating an account in our bank, your agency number is:" +agencyNumber+ ", and your balance is:" +balance+ "!");
         }
         if (inputUser == 5) {
             System.out.println("Exiting the program, Goodbye!");
             break;
         }
-    } 
+    }
     scanner.close();
-    } 
+    }
 }
