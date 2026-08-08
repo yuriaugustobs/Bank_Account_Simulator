@@ -1,3 +1,10 @@
+/**
+ * BankAccountSimulator - Simulador bancário de console ("FutureBank").
+ *
+ * Aplicação Java de estudo que apresenta um menu interativo em loop, permitindo
+ * ao usuário criar uma conta (informando nome, agência e saldo inicial) e
+ * consultar saldo, nome e número de agência, além de encerrar o programa.
+ */
 import java.util.Scanner;
 
 public class BankAccountSimulator {
@@ -39,7 +46,7 @@ while (true){
              else{
                 System.out.println("Your name is:" + name);
              }
-        }   
+        }
 
         if (inputUser == 4) {
             if (agencyNumber.equals("")) {
@@ -60,7 +67,7 @@ while (true){
             agencyNumber = scanner.nextLine();
 
             System.out.println ("Please, enter your initial balance:");
-            String balanceInput = scanner.nextLine(); 
+            String balanceInput = scanner.nextLine();
 
                 // Convert to  double
                 balance = Double.parseDouble(balanceInput.replace(",", "."));
@@ -71,7 +78,7 @@ while (true){
             System.out.println("Exiting the program, Goodbye!");
             break;
         }
-    } 
+    }
     scanner.close();
-    } 
+    }
 }
