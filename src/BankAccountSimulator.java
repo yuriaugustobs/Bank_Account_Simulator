@@ -1,14 +1,19 @@
 import java.util.Scanner;
 
 public class BankAccountSimulator {
+
+    // Campos de instância para que métodos da classe (como exibirResumo) possam acessar o estado da conta.
+    private String name = "";
+    private String agencyNumber = "";
+    private double balance = 0;
+
     public static void main(String[] args) throws Exception {
         //TODO: To Know and import Scanner Class.
         //Show messages of user.
         //Get by Scanner Class the input values of terminal.
         //Show the message "Account Created"
-        String name = "";
-        double balance = 0;
-        String agencyNumber = "";
+
+        BankAccountSimulator account = new BankAccountSimulator();
 
         Scanner scanner = new Scanner(System.in);
 while (true){
@@ -24,29 +29,29 @@ while (true){
         //verification of input
 
         if (inputUser == 2) {
-            if (balance == 0) {
+            if (account.balance == 0) {
                 System.out.println (" You must create your account first");
             }
             else{
-            System.out.println ("Your balance is $" + balance);
+            System.out.println ("Your balance is $" + account.balance);
             }
         }
 
         if (inputUser == 3) {
-            if (name.equals("")) {
+            if (account.name.equals("")) {
               System.out.println (" You must create your account first");
              }
              else{
-                System.out.println("Your name is:" + name);
+                System.out.println("Your name is:" + account.name);
              }
-        }   
+        }
 
         if (inputUser == 4) {
-            if (agencyNumber.equals("")) {
+            if (account.agencyNumber.equals("")) {
             System.out.println (" You must create your account first");
             }
             else {
-                System.out.println ("Your agency number is:" + agencyNumber);
+                System.out.println ("Your agency number is:" + account.agencyNumber);
             }
         }
 
@@ -54,24 +59,45 @@ while (true){
             scanner.nextLine();
 
             System.out.println ("Please, enter your name:");
-            name = scanner.nextLine();
+            account.name = scanner.nextLine();
 
             System.out.println ("Please, enter the number of agency:");
-            agencyNumber = scanner.nextLine();
+            account.agencyNumber = scanner.nextLine();
 
             System.out.println ("Please, enter your initial balance:");
-            String balanceInput = scanner.nextLine(); 
+            String balanceInput = scanner.nextLine();
 
                 // Convert to  double
-                balance = Double.parseDouble(balanceInput.replace(",", "."));
+                account.balance = Double.parseDouble(balanceInput.replace(",", "."));
 
-            System.out.println ("Thank you for creating an account in our bank, your agency number is:" +agencyNumber+ ", and your balance is:" +balance+ "!");
+            System.out.println ("Thank you for creating an account in our bank, your agency number is:" + account.agencyNumber + ", and your balance is:" + account.balance + "!");
         }
         if (inputUser == 5) {
             System.out.println("Exiting the program, Goodbye!");
             break;
         }
-    } 
+    }
     scanner.close();
-    } 
+    }
+
+    /**
+     * Exibe um resumo da conta em uma única linha, em português.
+     * Caso a conta ainda não tenha sido criada (campos vazios/zero),
+     * informa o usuário em vez de imprimir lixo.
+     */
+    public void exibirResumo() {
+        if ((name == null || name.isEmpty())
+                && (agencyNumber == null || agencyNumber.isEmpty())
+                && balance == 0) {
+            System.out.println("Resumo da conta — Conta ainda não foi criada.");
+            return;
+        }
+
+        String nomeExibir = (name == null || name.isEmpty()) ? "(não informado)" : name;
+        String agenciaExibir = (agencyNumber == null || agencyNumber.isEmpty()) ? "(não informada)" : agencyNumber;
+
+        System.out.println("Resumo da conta — Nome: " + nomeExibir
+                + " | Agência: " + agenciaExibir
+                + " | Saldo: R$ " + balance);
+    }
 }
