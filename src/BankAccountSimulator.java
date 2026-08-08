@@ -12,17 +12,24 @@ public class BankAccountSimulator {
 
         Scanner scanner = new Scanner(System.in);
 while (true){
-        System.out.println("=== FutureBank v1.1 ===");
         System.out.println("Hello, Welcome to FutureBank, please press the number corresponding to the option you wish to perform:");
         System.out.println("To create your account, press -> 1");
         System.out.println("To show your balance, press -> 2");
         System.out.println("To show your nome, press -> 3");
         System.out.println("To see your number and agency, press -> 4");
         System.out.println("To Exit -> 5");
+        System.out.println("To quick-cancel and exit now -> 0");
 
             int inputUser = scanner.nextInt(); //get the input of the user
 
         //verification of input
+
+        // Quick cancel: shortcut key '0' to exit the program immediately,
+        // without having to navigate to option 5.
+        if (inputUser == 0) {
+            System.out.println("Quick cancel activated. Exiting the program, Goodbye!");
+            break;
+        }
 
         if (inputUser == 2) {
             if (balance == 0) {
@@ -66,7 +73,6 @@ while (true){
                 // Convert to  double
                 balance = Double.parseDouble(balanceInput.replace(",", "."));
 
-            System.out.println ("[TEST] Account successfully created!");
             System.out.println ("Thank you for creating an account in our bank, your agency number is:" +agencyNumber+ ", and your balance is:" +balance+ "!");
         }
         if (inputUser == 5) {
