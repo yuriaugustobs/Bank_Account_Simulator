@@ -1,3 +1,12 @@
+/*
+ * BankAccountSimulator
+ * Console-based Java program that simulates a simple bank account workflow.
+ * It presents an interactive menu allowing the user to create an account (name,
+ * agency number and initial balance) and to query the stored balance, name and
+ * agency, validating that the account has been created before any query and
+ * supporting graceful exit via menu option 5.
+ */
+
 import java.util.Scanner;
 
 public class BankAccountSimulator {
