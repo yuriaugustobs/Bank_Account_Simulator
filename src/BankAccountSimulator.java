@@ -1,14 +1,23 @@
 import java.util.Scanner;
 
 public class BankAccountSimulator {
+    private static String name = "";
+    private static double balance = 0;
+    private static String agencyNumber = "";
+
+    public static void exibirResumo() {
+        if (name.equals("") || agencyNumber.equals("") || balance == 0) {
+            System.out.println("Nenhuma conta criada ainda.");
+        } else {
+            System.out.println("Resumo da conta: nome=" + name + ", agência=" + agencyNumber + ", saldo=" + balance);
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         //TODO: To Know and import Scanner Class.
         //Show messages of user.
         //Get by Scanner Class the input values of terminal.
         //Show the message "Account Created"
-        String name = "";
-        double balance = 0;
-        String agencyNumber = "";
 
         Scanner scanner = new Scanner(System.in);
 while (true){
